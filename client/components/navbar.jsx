@@ -5,11 +5,12 @@ export default class Navbar extends React.Component {
   render() {
     const { user, handleSignOut } = this.context;
     return (
-      <nav className="navbar navbar-dark bg-dark">
+      <nav className="navbar">
         <div className="container">
           <a className="navbar-brand" href="#">
-            <i className="fas fa-bolt me-2" />
-            Otracku
+            <h2 className="text-dark">
+              Otracku
+            </h2>
           </a>
           <div>
             {user !== null &&

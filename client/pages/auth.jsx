@@ -19,15 +19,15 @@ export default class AuthPage extends React.Component {
       : './images/mobile-mash.png';
 
     return (
-      <div className="">
-        <div className="">
-          <header className="">
-            <h2 className="">
+      <div className="row pt-5 align-items-center">
+        <div className="col-12 offset-0 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-4 offset-xl-4">
+          <header className="text-center">
+            {/* <h2 className="">
               <i className="" />
               Otracku
-            </h2>
+            </h2> */}
             <img src={welcomeImage} />
-            <p className="">{welcomeMessage}</p>
+            <p className="text-light">{welcomeMessage}</p>
           </header>
           <div className="">
             <AuthForm

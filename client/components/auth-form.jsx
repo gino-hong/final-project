@@ -51,38 +51,46 @@ export default class AuthForm extends React.Component {
       : 'Log In';
     return (
       <form className="w-100" onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label htmlFor="username" className="form-label">
-            Username
-          </label>
-          <input
-            required
-            autoFocus
-            id="username"
-            type="text"
-            name="username"
-            onChange={handleChange}
-            className="form-control bg-light" />
+        <div className="mb-3 text-center">
+          <div>
+            <label htmlFor="username" className="form-label text-light">
+              Username
+            </label>
+          </div>
+          <div>
+            <input
+              required
+              autoFocus
+              id="username"
+              type="text"
+              name="username"
+              onChange={handleChange}
+              className="" />
+          </div>
         </div>
-        <div className="mb-3">
-          <label htmlFor="password" className="form-label">
-            Password
-          </label>
-          <input
+        <div className="mb-3 text-center">
+          <div>
+            <label htmlFor="password" className="form-label text-light">
+              Password
+            </label>
+          </div>
+          <div>
+            <input
             required
             id="password"
             type="password"
             name="password"
             onChange={handleChange}
-            className="form-control bg-light" />
+            className="mb-5" />
+          </div>
         </div>
         <div className="d-flex justify-content-between align-items-center">
           <small>
-            <a className="text-muted" href={alternateActionHref}>
+            <a className="text-gold" href={alternateActionHref}>
               {alternatActionText}
             </a>
           </small>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn-gold">
             {submitButtonText}
           </button>
         </div>
