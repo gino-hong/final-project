@@ -9,18 +9,17 @@ img {
   max-height: 100%;
 }
 
-.navbar,
-.btn-gold {
+.navbar {
   background-color: #ffb302;
-}
-
-.text-gold,
-.text-gold:hover {
-  color: #ffb302;
 }
 
 .btn-primary,
 .btn-primary:hover,
 .bg-blue {
   background-color: #000080;
+}
+
+.text-gold,
+.text-gold:hover {
+  color: #ffb302;
 }

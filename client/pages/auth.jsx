@@ -22,14 +22,10 @@ export default class AuthPage extends React.Component {
       <div className="row pt-5 align-items-center">
         <div className="col-12 offset-0 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-4 offset-xl-4">
           <header className="text-center">
-            {/* <h2 className="">
-              <i className="" />
-              Otracku
-            </h2> */}
             <img src={welcomeImage} />
             <p className="text-light">{welcomeMessage}</p>
           </header>
-          <div className="">
+          <div>
             <AuthForm
               key={route.path}
               action={route.path}

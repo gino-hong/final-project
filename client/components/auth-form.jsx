@@ -90,7 +90,7 @@ export default class AuthForm extends React.Component {
               {alternatActionText}
             </a>
           </small>
-          <button type="submit" className="btn-gold">
+          <button type="submit" className="btn-secondary">
             {submitButtonText}
           </button>
         </div>
