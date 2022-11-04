@@ -14,7 +14,7 @@ insert into "entries" (
 ) values (
   'Sunday',
   'Anime',
-  'A1',
+  'Mobile Suit Gundam: The Witch from Mercury',
   1
 ), (
   'Monday',

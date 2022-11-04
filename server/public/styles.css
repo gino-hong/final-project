@@ -23,3 +23,8 @@ img {
 .text-gold:hover {
   color: #ffb302;
 }
+
+.day {
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
