@@ -20,11 +20,22 @@ img {
 }
 
 .text-gold,
-.text-gold:hover {
+.text-gold:hover,
+p {
   color: #ffb302;
 }
 
 .day {
   padding-top: 5vh;
   padding-bottom: 5vh;
+}
+
+.side-margin {
+  margin-left: 5px;
+  margin-right: 5px;
+  min-width: 100%;
+}
+
+.mw100 {
+  min-width: 100%;
 }

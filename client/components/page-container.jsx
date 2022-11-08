@@ -9,7 +9,7 @@ const styles = {
 export default function PageContainer({ children }) {
   return (
     <div className="bg-blue">
-      <div className="container bg-gold" style={styles.page}>
+      <div className="container bg-gold mw100" style={styles.page}>
         {children}
       </div>
     </div>
