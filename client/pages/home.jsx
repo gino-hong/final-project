@@ -33,10 +33,10 @@ export default class Home extends React.Component {
       <div className="container text-light text-center side-margin">
         <div className="row align-self-center">
           {
-            this.state.day.map(day => (
-              <Day key={day} day={day} />
-            ))
-          }
+              this.state.day.map(day => (
+                <Day key={day} day={day} />
+              ))
+            }
         </div>
       </div>
     );
