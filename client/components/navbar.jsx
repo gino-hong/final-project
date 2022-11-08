@@ -14,10 +14,16 @@ export default class Navbar extends React.Component {
           </a>
           <div>
             {user !== null &&
-              <button className="btn btn-dark" onClick={handleSignOut}>
-                Sign out
-                <i className="ms-2 fas fa-sign-out-alt" />
-              </button>
+              <div>
+                <button className="btn btn-primary">
+                  Add entry
+                  <i className="fa-solid fa-plus" />
+                </button>
+                <button className="btn btn-dark" onClick={handleSignOut}>
+                  Sign out
+                  <i className="ms-2 fas fa-sign-out-alt" />
+                </button>
+              </div>
             }
             {user === null &&
               <>

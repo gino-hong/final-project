@@ -6,6 +6,7 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const ClientError = require('./client-error');
 const errorMiddleware = require('./error-middleware');
+const authorizationMiddleware = require('./authorization-middleware');
 
 const db = new pg.Pool({
   connectionString: process.env.DATABASE_URL,
@@ -77,6 +78,37 @@ app.post('/api/auth/sign-in', (req, res, next) => {
           res.json({ token, user: payload });
         });
     })
+    .catch(err => next(err));
+});
+
+app.use(authorizationMiddleware);
+
+app.get('/api/entries', authorizationMiddleware, (req, res, next) => {
+  const { userId } = req.user;
+  const sql = `
+    select *
+      from "entries"
+      where "userId" = $1
+  `;
+  const params = [userId];
+  db.query(sql, params)
+    .then(result => res.json(result.rows))
+    .catch(err => next(err));
+});
+
+app.get('/api/entries/:day/:category', authorizationMiddleware, (req, res, next) => {
+  const day = req.params.day;
+  const category = req.params.category;
+  const { userId } = req.user;
+  const sql = `
+    select *
+      from "entries"
+      where "day" = $1 and
+        "category" = $2 and
+        "userId" = $3`;
+  const params = [day, category, userId];
+  db.query(sql, params)
+    .then(result => res.json(result.rows))
     .catch(err => next(err));
 });
 
