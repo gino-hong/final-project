@@ -9,6 +9,15 @@ img {
   max-height: 100%;
 }
 
+p {
+  margin: 5px;
+}
+
+i {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
 .navbar {
   background-color: #ffb302;
 }
@@ -20,8 +29,7 @@ img {
 }
 
 .text-gold,
-.text-gold:hover,
-p {
+.text-gold:hover {
   color: #ffb302;
 }
 
@@ -38,4 +46,13 @@ p {
 
 .mw100 {
   min-width: 100%;
+}
+
+.flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+.space-around {
+  justify-content: space-around;
 }

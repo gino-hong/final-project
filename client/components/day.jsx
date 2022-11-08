@@ -28,22 +28,34 @@ export default class Day extends React.Component {
   render() {
     return (
       <div className="col day">
-        <h1 className="text-gold">{this.props.day}</h1>
-        <h2>Anime</h2>
+        <h1>{this.props.day}</h1>
+        <h2 className="text-gold">Anime</h2>
         {
-          this.state.anime.map(anime => (
-            <div key={anime.entryId}>
-              <p>{anime.title}</p>
-            </div>
-          ))
+          this.state.anime.length !== 0
+            ? this.state.anime.map(anime => (
+              <div key={anime.entryId} className="flex-align-center space-around">
+                <p>{anime.title}</p>
+                <div className="flex-align-center">
+                  <i className="fa-solid fa-pen" />
+                  <i className="fa-solid fa-trash" />
+                </div>
+              </div>
+            ))
+            : <p>Your list is empty.</p>
         }
-        <h2>Manga</h2>
+        <h2 className="text-gold">Manga</h2>
         {
-          this.state.manga.map(manga => (
-            <div key={manga.entryId}>
-              <p>{manga.title}</p>
-            </div>
-          ))
+          this.state.manga.length !== 0
+            ? this.state.manga.map(manga => (
+              <div key={manga.entryId} className="flex-align-center space-around">
+                <p>{manga.title}</p>
+                <div className="flex-align-center">
+                  <i className="fa-solid fa-pen" />
+                  <i className="fa-solid fa-trash" />
+                </div>
+              </div>
+            ))
+            : <p>Your list is empty.</p>
         }
       </div>
     );
