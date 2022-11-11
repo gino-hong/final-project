@@ -14,27 +14,27 @@ export default class Navbar extends React.Component {
           </a>
           <div>
             {user !== null &&
-              <div>
-                <button className="btn btn-primary">
-                  Add entry
-                  <i className="fa-solid fa-plus" />
-                </button>
-                <button className="btn btn-dark" onClick={handleSignOut}>
-                  Sign out
-                  <i className="ms-2 fas fa-sign-out-alt" />
-                </button>
-              </div>
-            }
+            <div>
+              <button className="btn btn-primary">
+                Add entry
+                <i className="fa-solid fa-plus" />
+              </button>
+              <button className="btn btn-dark" onClick={handleSignOut}>
+                Sign out
+                <i className="ms-2 fas fa-sign-out-alt" />
+              </button>
+            </div>
+              }
             {user === null &&
-              <>
-                <a href="#sign-in" className="btn btn-primary">
-                  Sign In
-                </a>
-                <a href="#sign-up" className="btn btn-dark">
-                  Sign Up
-                </a>
-              </>
-            }
+            <>
+              <a href="#sign-in" className="btn btn-primary">
+                Sign In
+              </a>
+              <a href="#sign-up" className="btn btn-dark">
+                Sign Up
+              </a>
+            </>
+              }
           </div>
         </div>
       </nav>

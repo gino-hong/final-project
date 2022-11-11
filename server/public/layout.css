@@ -1,0 +1,23 @@
+@media screen and (max-width: 576px) {
+  .btn {
+    font-size: 10px;
+  }
+
+  .mobile-view {
+    flex-direction: column;
+  }
+
+  .mobile-hidden {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .day {
+    margin-top: 50px;
+  }
+
+  .desktop-hidden {
+    display: none;
+  }
+}

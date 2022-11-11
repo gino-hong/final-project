@@ -18,6 +18,10 @@ i {
   margin-right: 5px;
 }
 
+a {
+  font-size: 24px;
+}
+
 .navbar {
   background-color: #ffb302;
 }
@@ -28,13 +32,15 @@ i {
   background-color: #000080;
 }
 
-.text-gold,
-.text-gold:hover {
-  color: #ffb302;
+.abbr {
+  text-decoration: none;
 }
 
-.day {
-  margin-top: 50px;
+.text-gold,
+.text-gold:hover,
+.abbr,
+.abbr:hover {
+  color: #ffb302;
 }
 
 .side-margin {
@@ -47,11 +53,23 @@ i {
   min-width: 100%;
 }
 
-.flex-align-center {
-  display: flex;
+.align-center {
   align-items: center;
 }
 
 .space-around {
   justify-content: space-around;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.flex {
+  display: flex;
+}
+
+.ptb20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
