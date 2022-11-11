@@ -27,7 +27,7 @@ export default class Day extends React.Component {
 
   render() {
     return (
-      <div className={this.props.day === 'Sunday' ? 'col day' : 'col day mobile-hidden'}>
+      <div className={this.props.className}>
         <h1>{this.props.day}</h1>
         <h2 className="text-gold">Anime</h2>
         {

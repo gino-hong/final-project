@@ -9,8 +9,14 @@ export default class Home extends React.Component {
     this.state = {
       entries: [],
       day: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-      abbr: ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa']
+      abbr: ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'],
+      index: 0
     };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    this.setState({ index: Number(e.target.id) });
   }
 
   componentDidMount() {
@@ -36,7 +42,7 @@ export default class Home extends React.Component {
           <div className="flex space-evenly ptb20">
             {
             this.state.day.map((day, index) => (
-              <a href="#" key={index} className="abbr">{this.state.abbr[index]}</a>
+              <a href="#" key={index} id={index} className="abbr" onClick={this.handleClick}>{this.state.abbr[index]}</a>
             )
             )
           }
@@ -45,8 +51,8 @@ export default class Home extends React.Component {
         <div className="container text-light text-center side-margin">
           <div className="row align-self-center mobile-view">
             {
-              this.state.day.map(day => (
-                <Day key={day} day={day} />
+              this.state.day.map((day, index) => (
+                <Day key={day} id={index} day={day} className={this.state.index === index ? 'col day' : 'col day mobile-hidden'}/>
               ))
             }
           </div>
