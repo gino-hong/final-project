@@ -10,12 +10,13 @@ export default class Home extends React.Component {
       entries: [],
       day: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
       abbr: ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'],
-      index: 0
+      index: Number(JSON.parse(window.localStorage.getItem('index')))
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(e) {
+    window.localStorage.setItem('index', JSON.stringify(Number(e.target.id)));
     this.setState({ index: Number(e.target.id) });
   }
 
