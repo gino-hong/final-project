@@ -1,6 +1,10 @@
 @media screen and (max-width: 576px) {
   .btn {
-    font-size: 10px;
+    font-size: 9px;
+  }
+
+  .otracku {
+    font-size: 18px;
   }
 
   .mobile-view {

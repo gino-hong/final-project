@@ -8,7 +8,7 @@ export default class Navbar extends React.Component {
       <nav className="navbar">
         <div className="container">
           <a className="navbar-brand" href="#">
-            <h2 className="text-dark">
+            <h2 className="text-dark otracku">
               Otracku
             </h2>
           </a>
