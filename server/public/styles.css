@@ -32,6 +32,9 @@ i {
   text-decoration: none;
   font-size: 20px;
   border: solid #ffb302;
+  height: 40px;
+  width: 40px;
+  text-align: center;
 }
 
 .text-gold,
