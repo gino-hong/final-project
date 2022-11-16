@@ -28,13 +28,20 @@ i {
   background-color: #000080;
 }
 
-.text-gold,
-.text-gold:hover {
-  color: #ffb302;
+.abbr {
+  text-decoration: none;
+  font-size: 20px;
+  border: solid #ffb302;
+  height: 40px;
+  width: 40px;
+  text-align: center;
 }
 
-.day {
-  margin-top: 50px;
+.text-gold,
+.text-gold:hover,
+.abbr,
+.abbr:hover {
+  color: #ffb302;
 }
 
 .side-margin {
@@ -47,11 +54,23 @@ i {
   min-width: 100%;
 }
 
-.flex-align-center {
-  display: flex;
+.align-center {
   align-items: center;
 }
 
 .space-around {
   justify-content: space-around;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.flex {
+  display: flex;
+}
+
+.ptb20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

@@ -27,15 +27,15 @@ export default class Day extends React.Component {
 
   render() {
     return (
-      <div className="col day">
+      <div className={this.props.className}>
         <h1>{this.props.day}</h1>
         <h2 className="text-gold">Anime</h2>
         {
           this.state.anime.length !== 0
             ? this.state.anime.map(anime => (
-              <div key={anime.entryId} className="flex-align-center space-around">
+              <div key={anime.entryId} className="flex align-center space-around">
                 <p>{anime.title}</p>
-                <div className="flex-align-center">
+                <div className="flex align-center">
                   <i className="fa-solid fa-pen" />
                   <i className="fa-solid fa-trash" />
                 </div>
@@ -47,9 +47,9 @@ export default class Day extends React.Component {
         {
           this.state.manga.length !== 0
             ? this.state.manga.map(manga => (
-              <div key={manga.entryId} className="flex-align-center space-around">
+              <div key={manga.entryId} className="flex align-center space-around">
                 <p>{manga.title}</p>
-                <div className="flex-align-center">
+                <div className="flex align-center">
                   <i className="fa-solid fa-pen" />
                   <i className="fa-solid fa-trash" />
                 </div>
