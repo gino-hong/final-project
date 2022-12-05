@@ -15,10 +15,10 @@ export default class Navbar extends React.Component {
           <div>
             {user !== null &&
             <div>
-              <button className="btn btn-primary">
+              <a href="#add-entry" className="btn btn-primary">
                 Add entry
                 <i className="fa-solid fa-plus" />
-              </button>
+              </a>
               <button className="btn btn-dark" onClick={handleSignOut}>
                 Sign out
                 <i className="ms-2 fas fa-sign-out-alt" />

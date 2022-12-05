@@ -7,6 +7,7 @@ import Home from './pages/home';
 import NotFound from './pages/not-found';
 import Navbar from './components/navbar';
 import PageContainer from './components/page-container';
+import Add from './pages/add';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -51,6 +52,9 @@ export default class App extends React.Component {
     }
     if (path === 'sign-in' || path === 'sign-up') {
       return <Auth />;
+    }
+    if (path === 'add-entry') {
+      return <Add />;
     }
     return <NotFound />;
   }
