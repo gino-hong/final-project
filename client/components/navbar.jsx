@@ -19,10 +19,10 @@ export default class Navbar extends React.Component {
                 Add entry
                 <i className="fa-solid fa-plus" />
               </a>
-              <button className="btn btn-dark" onClick={handleSignOut}>
+              <a href="#sign-in" className="btn btn-dark" onClick={handleSignOut}>
                 Sign out
                 <i className="ms-2 fas fa-sign-out-alt" />
-              </button>
+              </a>
             </div>
               }
             {user === null &&

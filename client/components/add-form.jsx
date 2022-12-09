@@ -4,8 +4,8 @@ export default class AddForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      day: '',
-      category: '',
+      day: 'Sunday',
+      category: 'Anime',
       title: ''
     };
     this.handleChange = this.handleChange.bind(this);
@@ -22,13 +22,17 @@ export default class AddForm extends React.Component {
     const req = {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'x-access-token': window.localStorage.getItem('react-context-jwt')
       },
       body: JSON.stringify(this.state)
     };
     fetch('/api/add-entry', req)
       .then(res => res.json())
-      .then();
+      .then(result => {
+        window.location.hash = '#';
+      });
+    event.target.reset();
   }
 
   render() {
@@ -47,15 +51,16 @@ export default class AddForm extends React.Component {
               autoFocus
               id="day"
               name="day"
+              value={this.state.day}
               onChange={handleChange}
-              className="">
+              className="text-center">
+              <option value="Sunday">Sunday</option>
               <option value="Monday">Monday</option>
               <option value="Tuesday">Tuesday</option>
               <option value="Wednesday">Wednesday</option>
               <option value="Thursday">Thursday</option>
               <option value="Friday">Friday</option>
               <option value="Saturday">Saturday</option>
-              <option value="Sunday">Sunday</option>
             </select>
           </div>
         </div>
@@ -71,10 +76,11 @@ export default class AddForm extends React.Component {
               autoFocus
               id="category"
               name="category"
+              value={this.state.category}
               onChange={handleChange}
-              className="">
-              <option value="Monday">Anime</option>
-              <option value="Tuesday">Manga</option>
+              className="text-center">
+              <option value="Anime">Anime</option>
+              <option value="Manga">Manga</option>
             </select>
           </div>
         </div>
