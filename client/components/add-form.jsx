@@ -5,8 +5,10 @@ export default class AddForm extends React.Component {
     super(props);
     this.state = {
       day: 'Sunday',
+      daysOfTheWeek: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
       category: 'Anime',
-      title: ''
+      title: '',
+      index: Number(JSON.parse(window.localStorage.getItem('index')))
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,6 +32,11 @@ export default class AddForm extends React.Component {
     fetch('/api/add-entry', req)
       .then(res => res.json())
       .then(result => {
+        for (let i = 0; i < this.state.daysOfTheWeek.length; i++) {
+          if (this.state.day === this.state.daysOfTheWeek[i]) {
+            window.localStorage.setItem('index', JSON.stringify(Number(i)));
+          }
+        }
         window.location.hash = '#';
       });
     event.target.reset();
