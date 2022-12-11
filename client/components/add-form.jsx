@@ -4,9 +4,9 @@ export default class AddForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      day: 'Sunday',
+      day: '',
       daysOfTheWeek: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-      category: 'Anime',
+      category: '',
       title: '',
       index: Number(JSON.parse(window.localStorage.getItem('index')))
     };
@@ -61,6 +61,7 @@ export default class AddForm extends React.Component {
               value={this.state.day}
               onChange={handleChange}
               className="text-center">
+              <option value="">Select an option.</option>
               <option value="Sunday">Sunday</option>
               <option value="Monday">Monday</option>
               <option value="Tuesday">Tuesday</option>
@@ -86,6 +87,7 @@ export default class AddForm extends React.Component {
               value={this.state.category}
               onChange={handleChange}
               className="text-center">
+              <option value="">Select an option.</option>
               <option value="Anime">Anime</option>
               <option value="Manga">Manga</option>
             </select>
