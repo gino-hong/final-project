@@ -112,6 +112,23 @@ app.get('/api/entries/:day/:category', authorizationMiddleware, (req, res, next)
     .catch(err => next(err));
 });
 
+app.post('/api/add-entry', authorizationMiddleware, (req, res, next) => {
+  const { day, category, title } = req.body;
+  const { userId } = req.user;
+  if (!day || !category || !title) {
+    throw new ClientError(400, 'day, category, and title are required fields');
+  }
+  const sql = `
+    insert into "entries" ("day", "category", "title", "userId")
+    values ($1, $2, $3, $4)
+    returning "entryId", "title", "createdAt"
+  `;
+  const params = [day, category, title, userId];
+  db.query(sql, params)
+    .then(result => res.json(result.rows))
+    .catch(err => next(err));
+});
+
 app.use(errorMiddleware);
 
 app.listen(process.env.PORT, () => {

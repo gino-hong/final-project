@@ -21,16 +21,18 @@ export default class Home extends React.Component {
   }
 
   componentDidMount() {
-    const req = {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-access-token': window.localStorage.getItem('react-context-jwt')
-      }
-    };
-    fetch('/api/entries', req)
-      .then(res => res.json())
-      .then(entries => this.setState({ entries }));
+    if (this.context.user !== null) {
+      const req = {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-access-token': window.localStorage.getItem('react-context-jwt')
+        }
+      };
+      fetch('/api/entries', req)
+        .then(res => res.json())
+        .then(entries => this.setState({ entries }));
+    }
   }
 
   render() {
